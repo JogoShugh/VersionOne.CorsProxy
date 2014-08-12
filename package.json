@@ -1,8 +1,9 @@
 {
-  "name": "Node.Proxy",
+  "name": "VersionOne.CorsProxy",
   "version": "0.0.1",
   "description": "",
   "main": "VersionOne.CorsProxy.js",
+  "repository": "https://github.com/kunzimariano/VersionOne.CorsProxy",
   "dependencies": {
     "body-parser": "^1.6.3",
     "cors": "^2.4.1",
