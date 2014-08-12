@@ -1,8 +1,9 @@
 var bodyParser = require('body-parser');
 var request = require('request');
-var express = require('express'),
-    cors = require('cors'),
-    app = express();
+var express = require('express');
+var app = express();
+var cors = require('cors');
+    
 
 app.use(bodyParser.text({ type : 'application/xml' }));
 //TODO: make it work only with the requestor url
