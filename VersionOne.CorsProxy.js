@@ -8,8 +8,6 @@ var cors = require('cors');
 app.use(bodyParser.text({ type : 'application/xml' }));
 //TODO: make it work only with the requestor url
 app.use(cors());
-//TODO: make this configurable
-var port = '1234';
 
 function getUrl(url) {
     //remove the initial slash
@@ -60,6 +58,7 @@ app.post('/*', function (req, res, next) {
     
 });
 
+var port = Number(process.env.PORT || 5000);
 app.listen(port, function () {
     console.log('CORS-enabled web server listening on port ' + port);
 });
