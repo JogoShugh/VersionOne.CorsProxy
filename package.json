@@ -10,7 +10,8 @@
     "request": "^2.40.0"
   },
   "devDependencies": {},
-  "scripts": {    
+  "scripts": {
+    "start": "VersionOne.CorsProxy.js"
   },
   "author": "VersionOne",
   "license": ""
