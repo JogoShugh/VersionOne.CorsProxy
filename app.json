@@ -1,5 +1,5 @@
 {
-  "name": "versionOneCorsProxy",
+  "name": "VersionOne.CorsProxy",
   "description": "A proxy so we can make cross-domain calls to servers without CORS enabled.",
   "repository": "https://github.com/kunzimariano/VersionOne.CorsProxy",
   "logo": "https://node-js-sample.herokuapp.com/node.svg",
