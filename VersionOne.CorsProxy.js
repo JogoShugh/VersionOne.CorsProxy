@@ -63,10 +63,7 @@ app.post('/*', function (req, res, next) {
         };
         
         request(options, function (error, response, body) {
-            if (error) {
-                responseError(res, error.message);
-                return;
-            }
+            if (error) throw error.message;
             addHeaders(res, getHeaders(response.headers));
             res.status(200).send(body);
         });
