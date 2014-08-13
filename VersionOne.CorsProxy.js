@@ -35,40 +35,44 @@ function responseError(response, msg) {
 }
 
 app.get('/*', function (req, res, next) {
-    var url = getUrl(req.url);
-    
-    var options = {
-        url: url,
-        method: 'GET',
-        headers: getHeaders(req.headers)
-    };
-    
-    request(options, function (error, response, body) {
-        if (error) {
-            responseError(res, error.message);
-            return;
-        }
-        addHeaders(res, getHeaders(response.headers));
-        res.end(body);
-    });
+    try {
+        var url = getUrl(req.url);
+        var options = {
+            url: url,
+            method: 'GET',
+            headers: getHeaders(req.headers)
+        };
+        
+        request(options, function (error, response, body) {
+            if (error) throw error.message;
+            addHeaders(res, getHeaders(response.headers));
+            res.end(body);
+        });
+    } catch (exception) {
+        responseError(res, exception);
+    }
 });
 
 app.post('/*', function (req, res, next) {
-    var options = {
-        url: getUrl(req.url),
-        method: 'POST',
-        body: req.body,
-        headers: getHeaders(req.headers)
-    };
-    
-    request(options, function (error, response, body) {
-        if (error) {
-            responseError(res, error.message);
-            return;
-        }
-        addHeaders(res, getHeaders(response.headers));
-        res.status(200).send(body);
-    });
+    try {
+        var options = {
+            url: getUrl(req.url),
+            method: 'POST',
+            body: req.body,
+            headers: getHeaders(req.headers)
+        };
+        
+        request(options, function (error, response, body) {
+            if (error) {
+                responseError(res, error.message);
+                return;
+            }
+            addHeaders(res, getHeaders(response.headers));
+            res.status(200).send(body);
+        });
+    } catch (exception) {
+        responseError(res, exception);
+    }
     
 });
 
