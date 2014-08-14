@@ -1,7 +1,7 @@
 {
   "name": "VersionOne.CorsProxy",
   "version": "0.0.1",
-  "description": "",
+  "description": "A proxy so we can make cross-domain calls to servers without CORS enabled.",
   "main": "VersionOne.CorsProxy.js",
   "repository": "https://github.com/kunzimariano/VersionOne.CorsProxy",
   "dependencies": {
